@@ -24,8 +24,10 @@ body {
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
@@ -44,10 +46,13 @@ body {
 }
 
 .password-display {
-    border: black;
-    margin-top: 20px;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 2em;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    width: auto;
 }
 
 .left-display {
@@ -56,7 +61,6 @@ body {
     flex-direction: column;
 }
 .input-container {
-    width: max-content;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -121,4 +125,23 @@ body {
     content: '✖';
     margin-left: 10px;
     color: #f44336;
+}
+
+@media (max-width: 768px) {
+    .keypad-section {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .input-container {
+        flex-direction: column;
+    }
+    .app-container {
+        flex-direction: column;
+    }
+
+    .keypad-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
