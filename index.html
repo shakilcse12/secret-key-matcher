@@ -15,7 +15,10 @@
         <div id="password-display" class="password-display">******</div>
       </div>
       <div class="input-section" id="input-section">
-        <div id="input-display" class="input-display"></div>
+        <div class="input-container">
+          <span class="enter-pin">Enter PIN:</span>
+          <div id="input-display" class="input-display"></div>
+      </div>
         <div class="keypad-section">
           <button class="keypad-button">1</button>
           <button class="keypad-button">2</button>
@@ -31,7 +34,7 @@
           <button id="clear-button" class="keypad-button">Clear</button>
           <button id="submit-button" class="keypad-button">Submit</button>
         </div>
-        <div class="result-message"></div>
+        <div id="result-message" class="result-message"></div>
       </div>
     </div>
     <script>
@@ -47,6 +50,45 @@
 
       let generatedPassword = "";
       let input = "";
+      generateButton.addEventListener("click", () => {
+        generatedPassword = Math.floor(100000 + Math.random() * 900000).toString();
+        passwordDisplay.textContent = generatedPassword;
+        input = "";
+        inputDisplay.textContent = input;
+        resultMessage.textContent = "";
+        resultMessage.className = "result-message";
+    });
+
+    keypadButtons.forEach(button => {
+        button.addEventListener("click", (e) => {
+            const value = e.target.textContent;
+            if (input.length < 6 && !isNaN(value)) {
+                input += value;
+                inputDisplay.textContent = input;
+            }
+        });
+    });
+
+    backspaceButton.addEventListener("click", () => {
+        input = input.slice(0, -1);
+        inputDisplay.textContent = input;
+    });
+
+    clearButton.addEventListener("click", () => {
+        input = "";
+        inputDisplay.textContent = input;
+    });
+
+    submitButton.addEventListener("click", () => {
+        if (input === generatedPassword) {
+            resultMessage.textContent = "Secret key Matched Successfully.";
+            resultMessage.className = "result-message success";
+        } else {
+            resultMessage.textContent = "Incorrect Key!!!!";
+            resultMessage.className = "result-message error";
+        }
+    });
+});
     </script>
   </body>
 </html>

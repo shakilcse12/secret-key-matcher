@@ -14,7 +14,7 @@ body {
     width: 90%;
     max-width: 1200px;
     height: 80vh;
-    background-color: #fff;
+    background-color: #b72222;
     border-radius: 10px;
 }
 
@@ -55,6 +55,18 @@ body {
     display: flex;
     flex-direction: column;
 }
+.input-container {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.enter-pin {
+    font-size: 1.2em;
+    flex-shrink: 0;
+}
 
 .input-display {
     margin-bottom: 10px;
@@ -63,6 +75,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     min-height: 40px;
+    width: 100%;
 }
 
 .keypad-section {
