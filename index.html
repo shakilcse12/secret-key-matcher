@@ -12,7 +12,7 @@
         <button id="generate-button" class="generate-button">
           Generate Password
         </button>
-        <div class="password-display">******</div>
+        <div id="password-display" class="password-display">******</div>
       </div>
       <div class="input-section" id="input-section">
         <div id="input-display" class="input-display"></div>
@@ -34,5 +34,19 @@
         <div class="result-message"></div>
       </div>
     </div>
+    <script>
+          document.addEventListener("DOMContentLoaded", () => {
+      const generateButton = document.getElementById("generate-button");
+      const passwordDisplay = document.getElementById("password-display");
+      const inputDisplay = document.getElementById("input-display");
+      const keypadButtons = document.querySelectorAll(".keypad-button");
+      const backspaceButton = document.getElementById("backspace-button");
+      const clearButton = document.getElementById("clear-button");
+      const submitButton = document.getElementById("submit-button");
+      const resultMessage = document.getElementById("result-message");
+
+      let generatedPassword = "";
+      let input = "";
+    </script>
   </body>
 </html>
