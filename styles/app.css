@@ -12,9 +12,10 @@ body {
     display: flex;
     flex-direction: row;
     width: 90%;
-    max-width: 1200px; /* Adjust as needed */
-    height: 80vh; /* Adjust as needed */
-    background-color: #ffffff;
+    max-width: 1200px;
+    height: 80vh;
+    background-color: #fff;
+    border-radius: 10px;
 }
 
 .generate-section,
@@ -55,3 +56,56 @@ body {
     flex-direction: column;
 }
 
+.input-display {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 24px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-height: 40px;
+}
+
+.keypad-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.keypad-button {
+    padding: 15px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.result-message {
+    margin-top: 20px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.success {
+    color: #4caf50;
+}
+
+.error {
+    color: #f44336;
+}
+
+.icon-success::before {
+    content: '✔';
+    margin-left: 10px;
+    color: #4caf50;
+}
+
+.icon-error::before {
+    content: '✖';
+    margin-left: 10px;
+    color: #f44336;
+}
